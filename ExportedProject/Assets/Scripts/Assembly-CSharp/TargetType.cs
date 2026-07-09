@@ -1,0 +1,62 @@
+using Il2CppDummyDll;
+
+[Token(Token = "0x200025A")]
+public enum TargetType
+{
+	[Token(Token = "0x4000CEE")]
+	Enemy = 0,
+	[Token(Token = "0x4000CEF")]
+	Guard = 1,
+	[Token(Token = "0x4000CF0")]
+	FuseboxClosed = 2,
+	[Token(Token = "0x4000CF1")]
+	FuseboxOpened = 3,
+	[Token(Token = "0x4000CF2")]
+	MainTarget = 4,
+	[Token(Token = "0x4000CF3")]
+	JaccuziWaiting = 5,
+	[Token(Token = "0x4000CF4")]
+	JaccuziReady = 6,
+	[Token(Token = "0x4000CF5")]
+	LuredWaiting = 7,
+	[Token(Token = "0x4000CF6")]
+	LuredReady = 8,
+	[Token(Token = "0x4000CF7")]
+	FuseboxReady = 9,
+	[Token(Token = "0x4000CF8")]
+	FuseboxNPCAlerted = 10,
+	[Token(Token = "0x4000CF9")]
+	HeatlampMainTarget = 11,
+	[Token(Token = "0x4000CFA")]
+	BodyDisposalReady = 12,
+	[Token(Token = "0x4000CFB")]
+	ForceMovingEnemy = 13,
+	[Token(Token = "0x4000CFC")]
+	CarLuredWaiting = 14,
+	[Token(Token = "0x4000CFD")]
+	CarLuredReady = 15,
+	[Token(Token = "0x4000CFE")]
+	EnvironmentDestroyable = 16,
+	[Token(Token = "0x4000CFF")]
+	ExplosiveReady = 17,
+	[Token(Token = "0x4000D00")]
+	DominoKillWaiting = 18,
+	[Token(Token = "0x4000D01")]
+	DominoKillReady = 19,
+	[Token(Token = "0x4000D02")]
+	DominoKillNPCAlerted = 20,
+	[Token(Token = "0x4000D03")]
+	DominoKillStartLeaning = 21,
+	[Token(Token = "0x4000D04")]
+	EnemyOver250Meter = 22,
+	[Token(Token = "0x4000D05")]
+	EnemyBelow200Meter = 23,
+	[Token(Token = "0x4000D06")]
+	GuardBelow200Meter = 24,
+	[Token(Token = "0x4000D07")]
+	FanWaiting = 25,
+	[Token(Token = "0x4000D08")]
+	FanReady = 26,
+	[Token(Token = "0x4000D09")]
+	ElectricBoxReady = 27
+}

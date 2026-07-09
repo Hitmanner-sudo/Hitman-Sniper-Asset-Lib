@@ -1,0 +1,54 @@
+using Il2CppDummyDll;
+
+[Token(Token = "0x2000013")]
+public enum AndroidPermission
+{
+	[Token(Token = "0x400007F")]
+	ACCESS_COARSE_LOCATION = 0,
+	[Token(Token = "0x4000080")]
+	ACCESS_FINE_LOCATION = 1,
+	[Token(Token = "0x4000081")]
+	ADD_VOICEMAIL = 2,
+	[Token(Token = "0x4000082")]
+	BODY_SENSORS = 3,
+	[Token(Token = "0x4000083")]
+	CALL_PHONE = 4,
+	[Token(Token = "0x4000084")]
+	CAMERA = 5,
+	[Token(Token = "0x4000085")]
+	GET_ACCOUNTS = 6,
+	[Token(Token = "0x4000086")]
+	PROCESS_OUTGOING_CALLS = 7,
+	[Token(Token = "0x4000087")]
+	READ_CALENDAR = 8,
+	[Token(Token = "0x4000088")]
+	READ_CALL_LOG = 9,
+	[Token(Token = "0x4000089")]
+	READ_CONTACTS = 10,
+	[Token(Token = "0x400008A")]
+	READ_EXTERNAL_STORAGE = 11,
+	[Token(Token = "0x400008B")]
+	READ_PHONE_STATE = 12,
+	[Token(Token = "0x400008C")]
+	READ_SMS = 13,
+	[Token(Token = "0x400008D")]
+	RECEIVE_MMS = 14,
+	[Token(Token = "0x400008E")]
+	RECEIVE_SMS = 15,
+	[Token(Token = "0x400008F")]
+	RECEIVE_WAP_PUSH = 16,
+	[Token(Token = "0x4000090")]
+	RECORD_AUDIO = 17,
+	[Token(Token = "0x4000091")]
+	SEND_SMS = 18,
+	[Token(Token = "0x4000092")]
+	USE_SIP = 19,
+	[Token(Token = "0x4000093")]
+	WRITE_CALENDAR = 20,
+	[Token(Token = "0x4000094")]
+	WRITE_CALL_LOG = 21,
+	[Token(Token = "0x4000095")]
+	WRITE_CONTACTS = 22,
+	[Token(Token = "0x4000096")]
+	WRITE_EXTERNAL_STORAGE = 23
+}

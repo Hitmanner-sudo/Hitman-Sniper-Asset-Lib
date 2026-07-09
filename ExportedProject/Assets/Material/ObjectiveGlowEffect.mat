@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ObjectiveGlowEffect
+  m_Shader: {fileID: 4800000, guid: 59cdb6e9d0a11404fb73f76e3ad652c5, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      DirectionalityFactor: 0
+      SunColorIntensity: 0
+      _AdditiveColorRatio: 0
+      _AlphPower: 3
+      _AlphaMin: 0.5
+      _Amplitude: 0.5
+      _BaseScaleX: 1
+      _BaseScaleY: 1
+      _Blend: 0
+      _Cutoff: 0.5
+      _DScale: 1
+      _DetailAlpha: 1
+      _Distort: 1
+      _EmissionLM: 0
+      _FrenselClamp: 1
+      _Fresnel: 2
+      _FresnelExponent: 3.0714285
+      _InvFade: 1
+      _OffsetScale: 0.015
+      _Outline: 0.009
+      _RimPower: 3
+      _Scale: 1
+      _Shininess: 0.7
+      _SinusScale: 0
+      _Size: 1
+      _VignetteScale: 1
+      _VignetteWidth: 0.1
+      cloudSpeed1: 1
+      cloudSpeed2: 1
+      fade: 0
+      plane_height1: 1
+      plane_height2: 1
+      tint: 1
+    m_Colors:
+      BetaMieTheta: {r: 0, g: 0, b: 0, a: 1}
+      BetaRayTheta: {r: 0, g: 0, b: 0, a: 1}
+      LightDir: {r: 0, g: 0, b: 0, a: 1}
+      _AdditiveColor: {r: 1, g: 1, b: 1, a: 1}
+      _BlendColor: {r: 1, g: 0, b: 0, a: 1}
+      _BlendEmission: {r: 0, g: 0.8931034, b: 0.3808823, a: 0}
+      _BlendEnd: {r: 0, g: 1, b: 0, a: 1}
+      _BlendStart: {r: 0, g: 0, b: 0, a: 1}
+      _Color: {r: 1, g: 1, b: 0, a: 0.20738119}
+      _DetailRepeat: {r: 10, g: 10, b: 0, a: 0}
+      _Emission: {r: 0, g: 0, b: 0, a: 0}
+      _OutlineColor: {r: 0.862069, g: 1, b: 0, a: 1}
+      _ReflColor: {r: 0.26, g: 0.19, b: 0.16, a: 0}
+      _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
+      _RimColor: {r: 0.26, g: 0.19, b: 0.16, a: 0}
+      _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+      _TintColor: {r: 0.99607843, g: 0.74509805, b: 0, a: 1}
+      g_vEyePt: {r: 0, g: 0, b: 0, a: 1}
+      g_vSunColor: {r: 0, g: 0, b: 0, a: 1}
+      vBetaMie: {r: 0, g: 0, b: 0, a: 1}
+      vBetaRayleigh: {r: 0, g: 0, b: 0, a: 1}
+      wind_direction: {r: 0, g: 0, b: 0, a: 0}

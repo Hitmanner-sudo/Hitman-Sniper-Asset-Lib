@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Glass_HeatLamps
+  m_Shader: {fileID: 4800000, guid: 9c3120fd3be7ae7499bef8c754fcd0bd, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _EnvTex:
+        m_Texture: {fileID: 2800000, guid: 0c119b5441c5e8843a2ce74368c5c544, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8b4ac816d05a3744b91332a0d5631e79, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _Focus: -34.328358
+      _Reflectivity: 0.82142854
+      _Shininess: 1
+    m_Colors:
+      _Color: {r: 1, g: 1, b: 1, a: 1}
+      _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
+      _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+      _Specular: {r: 1, g: 1, b: 1, a: 0.56078434}

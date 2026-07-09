@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7208e37f1c630e45e7245a986cea324, type: 3}
+  m_Name: suv_alarm_end
+  m_EditorClassIdentifier:
+  PlayMode: 1
+  Loop: 0
+  Volume: 0.39810717
+  FadeInTime: 0
+  FadeOutTime: 0
+  IntroCrossFadeTime: 0.5
+  MinimumDelay: -1
+  MaximumDelay: -1
+  NoDelayOnStart: 0
+  NoRepeat: 1
+  BypassEffects: 0
+  DelayDistanceFirstSound: 0
+  PlayChance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AudioBusName: 1
+  _canBeKilled: 1
+  Sounds:
+  - _sound:
+      Clip:
+        _objectPath: Sounds/SFX/Vehicles/sfx_car_alarm_suv_end
+    _soundContainer: {fileID: 0}

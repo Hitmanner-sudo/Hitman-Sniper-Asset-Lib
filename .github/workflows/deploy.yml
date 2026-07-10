@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./my-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ./my-app/package-lock.json
+      - run: npm ci
+      - name: Create File Manifest
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const manifest = { audio: [], images: [] };
+          ['audio', 'images'].forEach(f => {
+            const p = path.join(process.cwd(), 'public', f);
+            if (fs.existsSync(p)) manifest[f] = fs.readdirSync(p).filter(x => !x.startsWith('.'));
+          });
+          fs.writeFileSync(path.join(process.cwd(), 'public', 'manifest.json'), JSON.stringify(manifest, null, 2));
+          "
+      - run: npx nuxi generate
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./my-app/.output/public

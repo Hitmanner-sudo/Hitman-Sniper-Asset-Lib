@@ -231,7 +231,7 @@
     const pixel = f.w && f.w <= 64 ? ' pixel' : '';
     let thumb;
     if (f.type === 'image') thumb = `<div class="thumb"><img loading="lazy" decoding="async" class="${pixel}" src="${thumbUrl(f)}" alt=""></div>`;
-    else if (f.type === 'audio') thumb = `<div class="thumb audio"><svg><use href="#i-wave"/></svg>${prefs.view === 'grid' ? `<span class="play-badge"><svg><use href="#i-${playing && !state.audio.el.paused ? 'pause' : 'play'}"/></svg></span>` : ''}</div>`;
+    else if (f.type === 'audio') thumb = `<div class="thumb audio"><svg><use href="#i-wave"/></svg></div>`;
     else thumb = `<div class="thumb other"><svg><use href="#i-file"/></svg></div>`;
     const cls = (playing ? ' playing' : '') + paused;
     if (prefs.view === 'grid') {
@@ -478,6 +478,7 @@
     const A = state.audio;
     A.list = list; A.idx = list.indexOf(f); A.file = f;
     au.dataset.fb = '';
+    resetBar();
     au.src = url(f);
     au.play().catch(() => {});
     el.player.hidden = false; document.body.classList.add('has-player');
@@ -488,6 +489,7 @@
     }
     refreshPlayingMarks();
   }
+  function resetBar() { el.seek.value = 0; setRange(el.seek); el.pTime.textContent = '0:00 / 0:00'; }
   function togglePlay() { if (!state.audio.file) return; au.paused ? au.play().catch(() => {}) : au.pause(); }
   function audioStep(d) {
     const A = state.audio, n = A.list[A.idx + d];
@@ -500,7 +502,7 @@
   }
   au.addEventListener('play', syncPlayBtn);
   au.addEventListener('pause', syncPlayBtn);
-  au.addEventListener('ended', () => audioStep(1));
+  au.addEventListener('ended', () => { au.currentTime = 0; el.seek.value = 0; setRange(el.seek); });
   au.addEventListener('error', () => {
     const f = state.audio.file;
     if (f && !au.dataset.fb) { au.dataset.fb = 1; au.src = url(f, true); au.play().catch(() => {}); }

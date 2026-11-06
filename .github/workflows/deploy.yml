@@ -1,21 +1,17 @@
 name: Deploy asset browser to GitHub Pages
 
 on:
+  # Every push to main: if Pages still deploys from a branch, GitHub's branch
+  # build runs on every push and would otherwise replace this site.
   push:
     branches: [main]
-    paths: ['public/**', 'site/**', '.github/workflows/deploy.yml']
   workflow_dispatch:
-  # While Pages > Source is still "Deploy from a branch", GitHub's own branch
-  # build publishes after every push and replaces this site. Redeploy once it
-  # has fully finished. Setting Source to "GitHub Actions" makes this unneeded.
-  workflow_run:
-    workflows: ['pages build and deployment']
-    types: [completed]
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
@@ -51,5 +47,25 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # While Settings > Pages > Source is "Deploy from a branch", GitHub also
+      # publishes the raw branch after each push. Wait until that has gone live,
+      # then publish this site on top. With Source set to "GitHub Actions" there
+      # is no branch build and this step finishes straight away.
+      - name: Wait for GitHub's branch Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 60); do
+            runs=$(gh api "repos/${{ github.repository }}/actions/runs?head_sha=${{ github.sha }}&per_page=50" \
+              --jq '[.workflow_runs[] | select(.name == "pages build and deployment")]' || echo '[]')
+            if [ "$(echo "$runs" | jq length)" = 0 ]; then
+              if [ "$i" -ge 4 ]; then echo "No branch build for this commit."; exit 0; fi
+            elif echo "$runs" | jq -e 'all(.status == "completed")' > /dev/null; then
+              echo "Branch build finished. Giving it time to go live before replacing it."
+              sleep 120; exit 0
+            fi
+            sleep 15
+          done
+          echo "Branch build still running after 15 minutes; deploying anyway."
       - id: deployment
         uses: actions/deploy-pages@v4

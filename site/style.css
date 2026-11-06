@@ -130,7 +130,6 @@ select {
 .card {
   position: relative; display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden;
   background: var(--panel); border: 1px solid var(--border); text-align: left; transition: border-color .15s, transform .15s, background .15s;
-  content-visibility: auto; contain-intrinsic-size: 160px 220px;
 }
 .card:hover { border-color: #3a3f48; background: var(--panel-2); }
 .card:active { transform: scale(.985); }
@@ -152,7 +151,7 @@ select {
 .files.list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--panel); }
 .row {
   display: flex; align-items: center; gap: 12px; padding: 8px 10px 8px 8px; min-height: 60px; text-align: left; width: 100%;
-  border-bottom: 1px solid var(--border); transition: background .12s; content-visibility: auto; contain-intrinsic-size: auto 60px;
+  border-bottom: 1px solid var(--border); transition: background .12s;
 }
 .row:last-child { border-bottom: 0; }
 .row:hover { background: var(--panel-2); }

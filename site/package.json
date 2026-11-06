@@ -1,0 +1,12 @@
+{
+  "name": "hitman-sniper-asset-browser",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:fast": "node build.mjs --no-thumbs"
+  },
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}

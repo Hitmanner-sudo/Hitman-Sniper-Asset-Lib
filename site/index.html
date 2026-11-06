@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111317">
+  <meta name="color-scheme" content="dark">
+  <title>Hitman Sniper Asset Library</title>
+  <meta name="description" content="Browse, preview, play and download Hitman Sniper textures and audio.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h3.6a2 2 0 0 1 1.4.6L12 7h6.5A2.5 2.5 0 0 1 21 9.5v7a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.3" fill="currentColor"/><circle cx="4.5" cy="12" r="1.3" fill="currentColor"/><circle cx="4.5" cy="18" r="1.3" fill="currentColor"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="13.5" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24"><path d="M7 5v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M19 6.2v11.6a.8.8 0 0 1-1.2.7L9.6 12.7a.8.8 0 0 1 0-1.4l8.2-5.8a.8.8 0 0 1 1.2.7z" fill="currentColor"/></symbol>
+      <symbol id="i-next" viewBox="0 0 24 24"><path d="M17 5v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5 6.2v11.6a.8.8 0 0 0 1.2.7l8.2-5.8a.8.8 0 0 0 0-1.4L6.2 5.5A.8.8 0 0 0 5 6.2z" fill="currentColor"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-bg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 4h8v8H4zM12 12h8v8h-8z" fill="currentColor" opacity=".55"/></symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12h1.5M6.5 8v8M10 5v14M13.5 9v6M17 6.5v11M20.5 10.5v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="9" cy="10" r="1.8" fill="currentColor"/><path d="m4.5 17.5 5-5 4 4 2.5-2.5 3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3.5h6.5L18 8v11.5a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1zM13 3.5V8.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+      <symbol id="i-vol" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Open folders" aria-controls="sidebar" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    <a class="brand" href="#/" aria-label="Home">
+      <img src="favicon.svg" alt="" width="28" height="28">
+      <span class="brand-text">Hitman Sniper <b>Assets</b></span>
+    </a>
+    <label class="search">
+      <svg><use href="#i-search"/></svg>
+      <input id="search" type="search" placeholder="Search all files…" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-label="Search all files">
+      <kbd class="kbd-hint">/</kbd>
+      <button id="searchClear" class="search-clear" type="button" aria-label="Clear search" hidden><svg><use href="#i-x"/></svg></button>
+    </label>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar" aria-label="Folders">
+      <div class="sidebar-head">
+        <span>Folders</span>
+        <button id="sidebarClose" class="icon-btn" aria-label="Close folders"><svg><use href="#i-x"/></svg></button>
+      </div>
+      <nav id="tree" class="tree" role="tree"></nav>
+      <div id="stats" class="sidebar-foot"></div>
+    </aside>
+    <div id="scrim" class="scrim" hidden></div>
+
+    <main class="main" id="main">
+      <div class="toolbar">
+        <nav id="crumbs" class="crumbs" aria-label="Breadcrumb"></nav>
+        <div class="tools">
+          <div class="seg" id="typeFilter" role="radiogroup" aria-label="File type">
+            <button data-type="all" role="radio">All</button>
+            <button data-type="image" role="radio">Images</button>
+            <button data-type="audio" role="radio">Audio</button>
+          </div>
+          <select id="sort" aria-label="Sort files">
+            <option value="name">Name A–Z</option>
+            <option value="-name">Name Z–A</option>
+            <option value="-size">Largest first</option>
+            <option value="size">Smallest first</option>
+            <option value="-res">Highest resolution</option>
+          </select>
+          <div class="seg seg-icons" id="viewToggle" role="radiogroup" aria-label="Layout">
+            <button data-view="grid" role="radio" aria-label="Grid view"><svg><use href="#i-grid"/></svg></button>
+            <button data-view="list" role="radio" aria-label="List view"><svg><use href="#i-list"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <p id="summary" class="summary"></p>
+      <section id="folders" class="folder-grid"></section>
+      <section id="files" class="files"></section>
+      <div id="sentinel" class="sentinel"></div>
+      <div id="empty" class="empty" hidden></div>
+      <div id="loading" class="empty"><div class="spinner"></div>Loading library…</div>
+    </main>
+  </div>
+
+  <div id="player" class="player" hidden>
+    <div class="player-progress"><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"></div>
+    <div class="player-row">
+      <div class="player-btns">
+        <button id="pPrev" class="icon-btn" aria-label="Previous"><svg><use href="#i-prev"/></svg></button>
+        <button id="pPlay" class="icon-btn play-btn" aria-label="Play"><svg><use href="#i-play"/></svg></button>
+        <button id="pNext" class="icon-btn" aria-label="Next"><svg><use href="#i-next"/></svg></button>
+      </div>
+      <div class="player-info">
+        <div id="pName" class="player-name"></div>
+        <div id="pTime" class="player-time">0:00 / 0:00</div>
+      </div>
+      <label class="player-vol"><svg><use href="#i-vol"/></svg><input id="pVol" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></label>
+      <button id="pDownload" class="icon-btn" aria-label="Download"><svg><use href="#i-download"/></svg></button>
+      <button id="pClose" class="icon-btn" aria-label="Close player"><svg><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+
+  <div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="viewer-bar">
+      <button id="vClose" class="icon-btn" aria-label="Close"><svg><use href="#i-x"/></svg></button>
+      <div class="viewer-title"><div id="vName"></div><div id="vMeta" class="viewer-meta"></div></div>
+      <button id="vZoom" class="icon-btn" aria-label="Toggle actual size" title="Actual size (Z)"><svg><use href="#i-zoom"/></svg></button>
+      <button id="vBg" class="icon-btn" aria-label="Change background" title="Background (B)"><svg><use href="#i-bg"/></svg></button>
+      <button id="vCopy" class="icon-btn" aria-label="Copy link" title="Copy direct link"><svg><use href="#i-link"/></svg></button>
+      <a id="vOpen" class="icon-btn" target="_blank" rel="noopener" aria-label="Open original" title="Open original"><svg><use href="#i-external"/></svg></a>
+      <button id="vDownload" class="icon-btn" aria-label="Download" title="Download (D)"><svg><use href="#i-download"/></svg></button>
+    </div>
+    <div id="vStage" class="viewer-stage bg-checker">
+      <img id="vThumb" class="viewer-thumb" alt="">
+      <img id="vImg" class="viewer-img" alt="">
+      <div id="vSpin" class="spinner viewer-spin"></div>
+    </div>
+    <button id="vPrev" class="viewer-nav prev" aria-label="Previous image"><svg><use href="#i-left"/></svg></button>
+    <button id="vNext" class="viewer-nav next" aria-label="Next image"><svg><use href="#i-right"/></svg></button>
+    <div id="vCount" class="viewer-count"></div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

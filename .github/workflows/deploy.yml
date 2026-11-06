@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths: ['public/**', 'site/**', '.github/workflows/deploy.yml']
   workflow_dispatch:
+  # If Pages is still set to "Deploy from a branch", GitHub's own branch build
+  # runs on every push and replaces this site. Redeploy right after it finishes.
+  # Setting Pages > Source to "GitHub Actions" makes this unnecessary.
+  page_build:
 
 permissions:
   contents: read

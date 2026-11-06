@@ -417,7 +417,7 @@
     const v = state.viewer, n = v.idx + d;
     if (n < 0 || n >= v.list.length) return;
     v.idx = n; showImage();
-    history.replaceState(null, '', '#/' + enc(v.list[n].vpath));
+    history.replaceState(history.state, '', '#/' + enc(v.list[n].vpath));
   }
   function closeViewer(fromHash) {
     if (el.viewer.hidden) return;
@@ -425,7 +425,7 @@
     if (el.sidebar.classList.contains('open') === false) document.body.classList.remove('lock');
     if (!fromHash) {
       if (state.viewer.pushed) history.back();
-      else history.replaceState(null, '', '#/' + enc(state.cur.path));
+      else history.replaceState(history.state, '', '#/' + enc(state.cur.path));
     }
     state.viewer.pushed = false;
   }
@@ -571,8 +571,46 @@
     for (let n = node.parent; n && n.path; n = n.parent) state.expanded.add(n.path); // reveal in tree
     if (node.folders.length) state.expanded.add(node.path);
     save();
-    render(true);
+    render(false);
+    restoreScroll();
   }
+
+  // ---------- scroll memory ----------
+  // Each history entry gets an id. Going back to an entry restores where you
+  // were; opening a folder fresh (new entry) starts at the top.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const scrollMem = (() => { try { return JSON.parse(sessionStorage.getItem('hsa:scroll')) || {}; } catch { return {}; } })();
+  let restoring = false, scrollRaf = 0, persistT;
+  function entryId() {
+    let st = history.state;
+    if (!st || !st.id) {
+      st = Object.assign({}, st, { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7) });
+      history.replaceState(st, '');
+    }
+    return st.id;
+  }
+  function restoreScroll() {
+    const y = scrollMem[entryId()] || 0;
+    restoring = true;
+    while (document.documentElement.scrollHeight < y + innerHeight && state.rendered < state.list.length) renderMore();
+    window.scrollTo(0, y);
+    requestAnimationFrame(() => { restoring = false; });
+  }
+  window.addEventListener('scroll', () => {
+    if (scrollRaf || restoring || !el.viewer.hidden) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = 0;
+      const id = history.state && history.state.id;
+      if (!id) return;
+      delete scrollMem[id]; scrollMem[id] = Math.round(window.scrollY); // keep newest last
+      clearTimeout(persistT);
+      persistT = setTimeout(() => {
+        const keys = Object.keys(scrollMem);
+        for (const k of keys.slice(0, Math.max(0, keys.length - 150))) delete scrollMem[k];
+        try { sessionStorage.setItem('hsa:scroll', JSON.stringify(scrollMem)); } catch {}
+      }, 250);
+    });
+  }, { passive: true });
   window.addEventListener('hashchange', route);
 
   // ---------- boot ----------

@@ -19,13 +19,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # Only what the site needs; skips the large ExportedProject folder.
           sparse-checkout: |
             site
             public
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Install build tools
@@ -33,7 +33,7 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Build file list and thumbnails
         working-directory: site
-        run: node build.mjs ../_site
+        run: node build.mjs _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
